@@ -1,0 +1,17 @@
+#logo_img
+{
+	position:relative;
+	margin:10px;
+	margin-right:5px;	
+	border-color:#0066ff;
+	box-shadow: 8px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#baner_img
+{
+	position:relative;
+	margin:10px;
+	margin-left:5px;
+	border-color:#0066ff;
+	box-shadow: 8px 8px 16px 0px rgba(0,0,0,0.2);
+}

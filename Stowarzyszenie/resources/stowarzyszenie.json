@@ -1,0 +1,61 @@
+﻿{
+"stowarzyszenie": 
+		[	{
+				"id":0,
+				"imie": "Jan",
+				"nazwisko": "Kowalski",
+				"status": "Prezes",
+				"telefon": "+48 772 128 229",
+				"e-mail": "jan.kowalski@rzb.pl",
+			},
+
+			{
+				"id":1,
+				"imie": "Joanna",
+				"nazwisko": "Kowalska",
+				"status": "Prezes",
+				"telefon": "+48 772 128 250",
+				"e-mail": "joanna.kowalska@rzb.pl",
+			},
+			{
+				"id":2,
+				"imie": "Kamil",
+				"nazwisko": "Kowalski",
+				"status": "Członek wspierający",
+				"telefon": "+48 772 128 229",
+				"e-mail": "kamil.kowalski@rzb.pl",
+			},
+			{
+				"id":3,
+				"imie": "Janina",
+				"nazwisko": "Bąk",
+				"status": "Członek wspierający",
+				"telefon": "+48 692 585 001",
+				"e-mail": "joanna.kowalski@rzb.pl",
+			},
+			{
+				"id":4,
+				"imie": "Anna",
+				"nazwisko": "Stoch",
+				"status": "Członek zwyczajny",
+				"telefon": "+48 772 556 450",
+				"e-mail": "anna.stoch@rzb.pl",
+			},
+			{
+				"id":5,
+				"imie": "Mateusz",
+				"nazwisko": "Wąskik",
+				"status": "Członek zwyczajny",
+				"telefon": "+48 723 228 225",
+				"e-mail": "mateusz.wasik@rzb.pl",
+			},
+			{
+				"id":6,
+				"imie": "Adam",
+				"nazwisko": "Kowoc",
+				"status": "Administrator",
+				"telefon": "+48 772 556 242",
+				"e-mail": "adam.kowoc@rzb.pl"
+			}
+			]
+}

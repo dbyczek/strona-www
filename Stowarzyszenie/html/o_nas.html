@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Dynamic Table</title>
+        <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+    button{
+        border-radius: 10px;
+        height: 45px;
+        width: 150px;
+        text-align: center;
+        background-color: #0066ff;
+        font-size: 15px;
+        color: #ffffff;
+        }
+      input{
+        height: 35px;
+        font-size: 15px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        text-align: center;
+        padding: 15px;
+        font-size: 20px;
+    }
+    th {
+        background-color: #0066ff;
+        color: white;
+        font-style: bold;
+        font-size: 35px;
+    }
+    </style>
+        <script >
+    //JSON Object................
+          var json_obj  = {
+              "stowarzyszenie": [	{
+				"imie": "Jan",
+				"nazwisko": "Kowalski",
+				"stanowisko": "Prezes",
+				"telefon": "+48 772 128 229",
+				"e-mail": "jan.kowalski@rzb.pl",
+			},
+						{
+				"imie": "Joanna",
+				"nazwisko": "Kowalska",
+				"stanowisko": "Prezes",
+				"telefon": "+48 772 128 250",
+				"e-mail": "joanna.kowalska@rzb.pl",
+			},
+			{
+				"imie": "Kamil",
+				"nazwisko": "Kowalski",
+				"stanowisko": "Członek",
+				"telefon": "+48 772 128 229",
+				"e-mail": "kamil.kowalski@rzb.pl",
+			},
+			{
+				"imie": "Janina",
+				"nazwisko": "Bąk",
+				"stanowisko": "Członek",
+				"telefon": "+48 692 585 001",
+				"e-mail": "janina.bak@rzb.pl",
+			},
+			{
+				"imie": "Anna",
+				"nazwisko": "Stoch",
+				"stanowisko": "Członek",
+				"telefon": "+48 772 556 450",
+				"e-mail": "anna.stoch@rzb.pl",
+			},
+			{
+				"imie": "Mateusz",
+				"nazwisko": "Wąskik",
+				"stanowisko": "Członek",
+				"telefon": "+48 723 228 225",
+				"e-mail": "mateusz.wasik@rzb.pl",
+			},
+			{
+				"imie": "Adam",
+				"nazwisko": "Kowoc",
+				"stanowisko": "Administrator",
+				"telefon": "+48 772 556 242",
+				"e-mail": "adam.kowoc@rzb.pl"
+			}
+        ]
+     }
+    //JSON Object End................
+    //Create table and fetch data from JSON Object.
+            $(document).ready(function(){
+                $("button").click(function(){
+                  var number_of_rows = json_obj.stowarzyszenie.length;
+                  var k = 0;
+                  var table_body = '<table border="1" id="example"><thead><tr><th>Imię</th><th>Nazwisko</th><th>Stanowsiko</th><th>Telefon</th><th>E-mail</th></tr></thead><tbody>';
+                  for(j in json_obj.stowarzyszenie){
+                  for(i =0;i<json_obj.stowarzyszenie.length;i++){
+                        table_body +='<tr>';
+                        table_body +='<td>';
+                        table_body +=json_obj.stowarzyszenie[k]["imie"];
+                        table_body +='</td>';
+						table_body +='<td>';
+                        table_body +=json_obj.stowarzyszenie[k]["nazwisko"];
+                        table_body +='</td>';                       
+                        table_body +='<td>';
+                        table_body +=json_obj.stowarzyszenie[k]["stanowisko"];
+                        table_body +='</td>';
+                        table_body +='<td>';
+                        table_body +=json_obj.stowarzyszenie[k]["telefon"];
+                        table_body +='</td>';
+                        table_body +='<td>';
+                        table_body +=json_obj.stowarzyszenie[k]["e-mail"];
+                        table_body +='</td>';						
+                        table_body+='</tr>';
+                  }
+                  k++;
+                }
+                    table_body+='</tbody></table>';
+                   $('#tableDiv').html(table_body);
+                  //display data..........
+                });
+    // for search function.................................. only............................
+            $("#search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("table tr").filter(function(index) {
+              if(index>0){
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        }
+        });
+    });
+    //=================End=========================End===============================
+            });
+    </script>
+    </head>
+    <body>
+    <div style="margin-top: 50px; margin-left: 250px; margin-right: 250px;">
+        <button>Skład stowarzyszenia</button>
+    <input type="text" id="search" placeholder="Search data here....."></input>
+        <div id="tableDiv" style="margin-top: 40px">
+        </div>
+    </div>
+    <p id="p1"></p>
+    </body>
+    </html>
